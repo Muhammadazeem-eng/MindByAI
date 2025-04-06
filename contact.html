@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>MindByAi</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("Vj-41okr5iEf2JbN5"); // Your Public Key
+      })();
+    </script>
     <script src="assets/js/vendors/color-modes.js"></script>
     <!-- Favicon icon-->
     <link
@@ -42,7 +48,7 @@
       <div id="loader" class="loader">
         <div class="loader-container text-centẻ">
           <div class="loader-icon">
-            <img src="assets/imgs/template/favicon.svg" alt="Preloader" />
+            <img src="assets/imgs/template/loaderIcon.svg" alt="Preloader" />
             <p>Loading...</p>
           </div>
         </div>
@@ -85,13 +91,13 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                <span class="text-white ps-1 fs-7">contact@infinia.com</span>
+                <span class="text-white ps-1 fs-7">info@mindbyai.com</span>
               </a>
             </div>
             <div
               class="d-flex d-none d-lg-flex align-items-center justify-content-center justify-content-lg-end"
             >
-              <a
+              <!-- <a
                 href="https://www.facebook.com/"
                 class="text-white icon-shape icon-md"
               >
@@ -124,7 +130,7 @@
                     fill="white"
                   />
                 </svg>
-              </a>
+              </a> -->
               <a
                 href="https://www.linkedin.com/"
                 class="text-white icon-shape icon-md"
@@ -158,7 +164,11 @@
             class="navbar-brand d-flex main-logo align-items-center"
             href="index.html"
           >
-            <img src="assets/imgs/template/favicon.svg" alt="infinia" />
+            <img
+              src="assets/imgs/template/favicon.svg"
+              style="width: 40px; padding-right: 7px"
+              alt="infinia"
+            />
             <span>MindByAI</span>
           </a>
           <div class="d-none d-lg-flex">
@@ -236,7 +246,11 @@
               class="navbar-brand d-flex main-logo align-items-center"
               href="index.html"
             >
-              <img src="assets/imgs/template/favicon.svg" alt="infinia" />
+              <img
+                src="assets/imgs/template/favicon.svg"
+                style="width: 40px; padding-right: 7px"
+                alt="infinia"
+              />
               <span>MindByAI</span>
             </a>
             <div class="burger-icon burger-icon-white border rounded-3">
@@ -408,7 +422,7 @@
                   <p class="text-white">
                     Do you want to know more or contact our sales department?
                   </p>
-                  <form action="#">
+                  <form id="contact-form">
                     <div class="row mt-5">
                       <div class="col-md-6">
                         <div class="input-group d-flex align-items-center">
@@ -440,6 +454,9 @@
                           </div>
                           <input
                             type="text"
+                            name="user_name"
+                            placeholder="Your name *"
+                            required
                             class="form-control ms-0 border rounded-2 rounded-start-0 border-start-0"
                             name="name"
                             placeholder="Your name *"
@@ -471,7 +488,10 @@
                             </svg>
                           </div>
                           <input
-                            type="text"
+                            type="email"
+                            name="user_email"
+                            placeholder="info@"
+                            required
                             class="form-control ms-0 border rounded-2 rounded-start-0 border-start-0"
                             name="name"
                             placeholder="info@"
@@ -509,6 +529,8 @@
                           </div>
                           <input
                             type="text"
+                            name="user_phone"
+                            placeholder="Phone"
                             class="form-control ms-0 border rounded-2 rounded-start-0 border-start-0"
                             name="name"
                             placeholder="Phone"
@@ -547,7 +569,7 @@
                           <input
                             type="text"
                             class="form-control ms-0 border rounded-2 rounded-start-0 border-start-0"
-                            name="name"
+                            name="subject"
                             placeholder="Subject"
                             aria-label="subject"
                           />
@@ -580,7 +602,8 @@
                           </div>
                           <textarea
                             class="form-control border border-start-0 ms-0 rounded-start-0 rounded-1 pb-10"
-                            name="name"
+                            type="text"
+                            name="message"
                             placeholder="Describe Your Project in Short"
                             aria-label="With textarea"
                           ></textarea>
@@ -712,7 +735,7 @@
                 </div>
                 <h6>Help & support</h6>
                 <p class="text-500">
-                  Email <span class="text-900">support@alithemes.com</span> For
+                  Email <span class="text-900">info@mindbyai.com</span> For
                   <br />
                   help with a current product or <br />
                   service or refer to FAQs and developer tools
@@ -731,8 +754,7 @@
                 <h6>Call Us</h6>
                 <p class="text-500">
                   Call us to speak to a member of our team. <br />
-                  (+01) 234 567 89 <br />
-                  (+01) 456 789 21
+                  +61 430 617 330
                 </p>
               </div>
             </div>
@@ -748,7 +770,7 @@
                 <h6>Business Department</h6>
                 <p class="text-500">
                   Contact the sales department about cooperation projects <br />
-                  (+01) 789 456 23
+                  +61 430 617 330
                 </p>
               </div>
             </div>
@@ -761,11 +783,10 @@
                     <img src="assets/imgs/contact-5/icon-4.svg" alt="infinia" />
                   </div>
                 </div>
-                <h6>Global branch</h6>
+                <h6><address></address></h6>
                 <p class="text-500">
-                  Contact us to open our branches globally. <br />
-                  (+01) 234 567 89 <br />
-                  (+01) 456 789 23
+                  Address: 50, Ashburton Circuit Kaleen, ACT, Australia <br />
+                  +61 430 617 330
                 </p>
               </div>
             </div>
@@ -777,22 +798,32 @@
         <div class="section-footer position-relative">
           <div class="container-fluid bgft-1">
             <div class="container position-relative z-2">
-              <div class="row py-90">
+              <div class="row py-90 custom-footer-row">
                 <div
-                  class="col-lg-6 pe-10 md-pe-0"
+                  class="col-lg-6 footer-boxes-content"
                   data-aos="fade-zoom-in"
                   data-aos-delay="100"
                 >
-                  <a href="index.html"
-                    ><img src="assets/imgs/logo/logo-white.svg" alt="infinia"
-                  /></a>
-                  <p class="text-white fw-medium mt-3 mb-6 opacity-50">
+                  <a
+                    class="navbar-brand d-flex main-logo align-items-center"
+                    href="index.html"
+                  >
+                    <img
+                      src="assets/imgs/template/favicon.svg"
+                      style="width: 40px; padding-right: 7px"
+                      alt="infinia"
+                    />
+                    <span>MindByAI</span>
+                  </a>
+                  <p
+                    class="text-white fw-medium mt-3 mb-6 opacity-50 footer-desc"
+                  >
                     You may also realize cost savings from your energy efficient
                     choices in your custom home. Federal tax credits for some
                     green materials can allow you to deduct as much.
                   </p>
                   <div class="d-flex social-icons">
-                    <a
+                    <!-- <a
                       href="https://www.facebook.com/"
                       class="text-white border border-end-0 border-light border-opacity-10 icon-shape icon-md"
                     >
@@ -814,7 +845,7 @@
                       class="text-white border border-end-0 border-light border-opacity-10 icon-shape icon-md"
                     >
                       <i class="bi bi-twitter-x"></i>
-                    </a>
+                    </a> -->
                     <a
                       href="https://www.linkedin.com/"
                       class="text-white border border-light border-opacity-10 icon-shape icon-md"
@@ -824,9 +855,9 @@
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <div class="row">
+                  <div class="row footer-boxes-row">
                     <div
-                      class="col-lg-6 col-md-4 col-6"
+                      class="col-lg-6 col-md-4 col-6 footer-boxes-otr"
                       data-aos="fade-zoom-in"
                       data-aos-delay="400"
                     >
@@ -835,7 +866,9 @@
                       >
                         Services
                       </h3>
-                      <div class="d-flex flex-column align-items-start">
+                      <div
+                        class="d-flex flex-column align-items-start footer-boxes-content"
+                      >
                         <a
                           class="hover-effect text-white mb-2 fw-medium fs-6"
                           href="./services.html"
@@ -874,7 +907,7 @@
                       </div>
                     </div>
                     <div
-                      class="col-lg-6 col-md-4 col-6"
+                      class="col-lg-6 col-md-4 col-6 footer-boxes-otr"
                       data-aos="fade-zoom-in"
                       data-aos-delay="500"
                     >
@@ -883,7 +916,9 @@
                       >
                         Resource
                       </h3>
-                      <div class="d-flex flex-column align-items-start">
+                      <div
+                        class="d-flex flex-column align-items-start footer-boxes-content"
+                      >
                         <a
                           class="hover-effect text-white mb-2 fw-medium fs-6"
                           href="./portfolio.html"
@@ -960,6 +995,25 @@
 
     <script src="assets/js/main.js"></script>
     <!-- Other scripts -->
+
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          emailjs.sendForm("service_i21yhf3", "template_pa219bs", this).then(
+            function (response) {
+              alert("Message sent successfully!");
+              document.getElementById("contact-form").reset();
+            },
+            function (error) {
+              alert("Failed to send message. Please try again.");
+              console.error("EmailJS Error:", error);
+            }
+          );
+        });
+    </script>
   </body>
 
   <!-- Mirrored from infinia-bootstrap-demo.vercel.app/section-hero by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Sep 2024 10:49:56 GMT -->

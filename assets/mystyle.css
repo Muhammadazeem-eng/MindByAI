@@ -279,3 +279,102 @@
                           height: 250px;
                         }
                       }
+
+
+
+
+                      
+                      .ceo-img{
+                        height: 446px;
+                      }
+
+.custom-hero-heading{
+  @media (max-width: 1400px) { 
+   
+      font-size: 50px !important;
+      line-height: 50px !important;
+    
+}
+@media (max-width: 567px) { 
+   
+  font-size: 30px !important;
+  line-height: 30px !important;
+  text-align: center;
+
+}
+}
+
+.custom-hero-desc{
+  @media (max-width: 1400px) { 
+   
+   margin-top: 16px !important;
+   margin-bottom: 16px !important;
+  
+}
+@media (max-width: 567px) { 
+   
+  
+  text-align: center;
+
+}
+}
+
+.section-padding{
+  @media (max-width: 992px) { 
+   
+    padding: 40px 0px !important;
+   
+ }
+}
+.container{
+  @media (max-width: 992px) { 
+   
+    max-width: calc(100% - 6px) !important;
+  }
+   
+ }
+
+
+ .custom-hero-otr{
+  @media (max-width: 567px) { 
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+ }
+
+ .btn-gradient{
+  @media (max-width: 567px) { 
+   
+    padding: 12px 15px;
+    font-size: 14px;
+}
+  
+  }
+
+.for-heading-manage{
+  font-size: 30px !important;
+ 
+  text-align: center;
+}
+
+.for-center{
+  @media (max-width: 567px) { 
+   
+    text-align: center;
+}
+}
+.custom-footer-row{
+  @media (max-width: 567px) { 
+   
+    padding: 40px 0px !important;
+}
+}
+.custom-hero-manage{
+  @media (max-width: 567px) { 
+   
+  padding-bottom: 40px !important;
+}
+}
